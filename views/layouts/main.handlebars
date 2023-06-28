@@ -1,0 +1,30 @@
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NO FRUIT FOR YOU!</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>YA GOTTA FIND IT</h1>
+    </header>
+    <nav>
+      <a href="/">Home</a>
+      {{#if loggedIn}}
+        <button id="logout" class="btn-no-style">Logout</button>
+      {{else}}
+        <a href="/login">Login</a>
+      {{/if}}
+    </nav>
+    <main>
+      <aside>
+      </aside>
+      <div class="fruit-sightings">
+        {{{body}}}
+      </div>
+    </main>
+  </body>
+
+</html>
