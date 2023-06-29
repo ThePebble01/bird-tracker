@@ -3,6 +3,7 @@ const Location = require("./Location");
 const Fruit = require("./Fruit");
 const Sighting = require("./Sighting");
 const FavoriteFruit = require("./FavoriteFruit");
+const FavoriteLocation = require("./FavoriteLocation");
 
 Sighting.belongsTo(Fruit, {
   foreignKey: "fruit_id",
@@ -13,13 +14,13 @@ Fruit.hasMany(Sighting, {
 Sighting.belongsTo(Location, {
   foreignKey: "location_id",
 });
-Fruit.hasMany(Location, {
+Location.hasMany(Sighting, {
   foreignKey: "location_id",
 });
 Sighting.belongsTo(Profile, {
   foreignKey: "profile_id",
 });
-Fruit.hasMany(Profile, {
+Profile.hasMany(Sighting, {
   foreignKey: "profile_id",
 });
 
@@ -29,7 +30,6 @@ FavoriteFruit.belongsTo(Fruit, {
 Fruit.hasMany(FavoriteFruit, {
   foreignKey: "fruit_id",
 });
-
 FavoriteFruit.belongsTo(Profile, {
   foreignKey: "profile_id",
 });
@@ -43,7 +43,6 @@ FavoriteLocation.belongsTo(Profile, {
 Profile.hasMany(FavoriteLocation, {
   foreignKey: "profile_id",
 });
-
 FavoriteLocation.belongsTo(Location, {
   foreignKey: "location_id",
 });
@@ -51,4 +50,11 @@ Location.hasMany(FavoriteLocation, {
   foreignKey: "location_id",
 });
 
-module.exports = { Profile, Location, Fruit, FavoriteFruit, FavoriteLocation};
+module.exports = {
+  Profile,
+  Location,
+  Fruit,
+  FavoriteFruit,
+  FavoriteLocation,
+  Sighting,
+};

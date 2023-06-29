@@ -6,20 +6,21 @@ class FavoriteLocation extends Model {}
 FavoriteLocation.init(
   {
     profile_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'profile',
-          key: 'id',
-        },
+      type: DataTypes.INTEGER,
+      references: {
+        model: "profile",
+        key: "id",
+      },
     },
     location_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'location',
-        key: 'id',
+        model: "location",
+        key: "id",
       },
     },
   },
+  {
     sequelize,
     timestamps: false,
     freezeTableName: true,

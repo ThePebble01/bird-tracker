@@ -36,4 +36,4 @@ Sighting.init(
   }
 );
 
-module.exports = sightings;
+module.exports = Sighting;
