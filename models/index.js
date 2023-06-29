@@ -30,11 +30,25 @@ Fruit.hasMany(FavoriteFruit, {
   foreignKey: "fruit_id",
 });
 
-FavoriteFruit.belongsTo(Location, {
+FavoriteFruit.belongsTo(Profile, {
+  foreignKey: "profile_id",
+});
+Profile.hasMany(FavoriteFruit, {
+  foreignKey: "profile_id",
+});
+
+FavoriteLocation.belongsTo(Profile, {
+  foreignKey: "profile_id",
+});
+Profile.hasMany(FavoriteLocation, {
+  foreignKey: "profile_id",
+});
+
+FavoriteLocation.belongsTo(Location, {
   foreignKey: "location_id",
 });
-Location.hasMany(FavoriteFruit, {
+Location.hasMany(FavoriteLocation, {
   foreignKey: "location_id",
 });
 
-FavoriteFruit.module.exports = { Profile, Location, Fruit };
+module.exports = { Profile, Location, Fruit, FavoriteFruit, FavoriteLocation};
