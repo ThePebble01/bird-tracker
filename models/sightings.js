@@ -12,15 +12,15 @@ sightings.init(
           key: 'id',
         },
     },
-    fruit: {
-      type: DataTypes.STRING,
+    fruit_id: {
+      type: DataTypes.INTEGER,
       references: {
         model: 'fruit',
         key: 'name',
       },
     },
-    location: {
-      type: DataTypes.STRING,
+    location_id: {
+      type: DataTypes.INTEGER,
       references: {
         model: 'location',
         key: 'name',
