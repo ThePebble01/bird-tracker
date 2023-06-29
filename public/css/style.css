@@ -1,10 +1,116 @@
 
 :root{
-    --dark: #0E2306;
+    --dark: #0c1f04;
     --light: #76B041;
-    --yellow: #F4EE7C;
+    --yellow: #fcf793;
     --orange: #E18243;
     --red: #E44848;
     --caprasimo: 'Caprasimo', cursive;
     --poppins: 'Poppins', san-serif;
 }
+
+body{
+    background-color: var(--yellow);
+}
+
+h1{
+    font-family: var(--caprasimo);
+    color: var(--red);
+}
+
+/* custom nav styles */
+.custom-nav{
+    background-color: var(--dark);
+    font-family: var(--caprasimo);
+    width: 100vw;
+    z-index: 1;
+}
+
+#custom-header-fruits{
+    font-size: 250%;
+    color: var(--red);
+}
+#custom-header-roots{
+    font-size: 250%;
+    color: var(--orange);
+}
+#custom-header-and{
+    font-size: 200%;
+    color: var(--yellow);
+}
+
+
+#custom-nav-option{
+    font-family: var(--poppins);
+    color: #fcf793;
+}
+
+a.nav-link{
+    font-size: 150%;
+    color: white;
+}
+
+a.nav-link:hover{
+    color: var(--light);
+}
+
+/* custom body & feed style */
+.custom-app-container{
+    position: relative;
+    padding-top: 8%;
+}
+
+.custom-feed-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--poppins);
+    background-color: var(--yellow);
+    border: solid 1px #E18243;
+}
+
+.custom-feed-item h3{
+    font-size: 200%;
+    color: var(--dark);
+}
+
+.custom-feed-item p{
+    color: var(--light)
+}
+
+/* custom sidebar card styles */
+.custom-fruit-card{
+    background-color: white;
+}
+
+.custom-fruit-card h5{
+    font-size: 150%;
+    font-family: var(--caprasimo);
+    color: var(--orange);
+}
+
+.custom-fruit-card h6{
+    font-family: var(--poppins);
+    color: var(--dark);
+}
+
+.custom-fruit-card a{
+    background-color: var(--light);
+    color: var(--dark);
+    font-family: var(--poppins);
+}
+
+.custom-fruit-card a:hover{
+    background-color: var(--orange);
+}
+
+
+
+
+
+img#profile-picture{
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+}
+
