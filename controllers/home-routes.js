@@ -5,11 +5,11 @@ router.get("/", async (req, res) => {
   try {
     const sightingData = await Sighting.findAll({
       limit: 10,
-      order: [["date_time", "DESC"]], // confirm date_time column name
+      order: [["createdAt", "DESC"]],
       include: [
         {
           model: Fruit,
-          attributes: ["name"], // CONFIRM COLUMN NAMES
+          attributes: ["name"],
         },
         {
           model: Location,
@@ -50,7 +50,7 @@ router.get("/sighting/:id", async (req, res) => {
       include: [
         {
           model: Fruit,
-          attributes: ["name"], // CONFIRM COLUMN NAMES
+          attributes: ["name"],
         },
         {
           model: Location,
