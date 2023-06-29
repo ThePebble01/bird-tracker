@@ -26,10 +26,6 @@ sightings.init(
         key: 'name',
       },
     },
-    date_time: {
-      type: DataTypes.DATETIME,
-      allowNull: false,
-    },
   },
     sequelize,
     timestamps: true,
