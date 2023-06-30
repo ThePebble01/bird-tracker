@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Sighting } = require("../../models");
+const { Sighting, Fruit, Location } = require("../../models");
 
 //Get an individual sighting
 router.get("/:id", async (req, res) => {
@@ -16,9 +16,7 @@ router.get("/:id", async (req, res) => {
         },
       ],
     });
-    const sightings = sightingData.map((sighting) =>
-      sighting.get({ plain: true })
-    );
+    const sightings = sightingData.get({ plain: true });
     res.json(sightings);
     //res.render("sighting", { sightings });
   } catch (err) {
@@ -28,11 +26,11 @@ router.get("/:id", async (req, res) => {
 });
 
 //Get a user's sightings - view other user's sightings
-router.get("/:profileId", async (req, res) => {
+router.get("/from/:profileId", async (req, res) => {
   try {
     const sightingData = await Sighting.findAll({
       where: {
-        profile_id: req.params.proifleId,
+        profile_id: req.params.profileId,
       },
       include: [
         {
@@ -45,8 +43,10 @@ router.get("/:profileId", async (req, res) => {
         },
       ],
     });
-    const sighting = sightingData.get({ plain: true });
-    res.json(sighting);
+    const sightings = sightingData.map((sighting) =>
+      sighting.get({ plain: true })
+    );
+    res.json(sightings);
     //res.render("sighting", { sighting });
   } catch (err) {
     console.log(err);
@@ -90,11 +90,18 @@ router.put("/:id", async (req, res) => {
               do we expose raw location fields and try to match by name, city, and state?
               do we expose a picklist for existing locations and then have raw fields under?
           */
-      const sightingData = await Sighting.create({
-        fruit_id: fruitId,
-        profile_id: req.session.profile_id,
-        location_id: locationId,
-      });
+      const sightingData = await Sighting.update(
+        {
+          fruit_id: fruitId,
+          profile_id: req.session.profile_id,
+          location_id: locationId,
+        },
+        {
+          where: {
+            id: req.params.id,
+          },
+        }
+      );
 
       res.status(200).json({ sightingData }); //CONFIRM RESPONSE
     } catch (err) {

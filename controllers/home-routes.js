@@ -28,7 +28,6 @@ router.get("/", async (req, res) => {
       order: [Sequelize.fn("RAND")],
       limit: 1,
     });
-    console.log(fruitData[0].get({ plain: true }));
     res.json({ fruitData, sightings, loggedIn: req.session.loggedIn }); //REMOVE AFTER TESTING
     const randomFruit = fruitData[0].get({ plain: true });
     //res.render("homepage", { sightings, randomFruit }); //homepage to display message if there is no sightning data
