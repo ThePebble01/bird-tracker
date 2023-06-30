@@ -12,6 +12,7 @@ Profile.init(
   {
     id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
@@ -42,7 +43,7 @@ Profile.init(
           newProfileData.password,
           10
         );
-        return newUserData;
+        return newProfileData;
       },
     },
     sequelize,

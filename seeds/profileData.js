@@ -1,15 +1,16 @@
 const { Profile } = require("../models");
-
+const bcrypt = require("bcrypt");
+const testUserPass = bcrypt.hashSync("Test123", 10);
 const profileData = [
   {
     username: "user1",
     email: "user1@aol.com",
-    password: "Test123",
+    password: testUserPass,
   },
   {
     username: "user2",
     email: "user2@aol.com",
-    password: "Test123",
+    password: testUserPass,
   },
 ];
 
