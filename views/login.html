@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/css/style.css"/>
+    <title>Fruits & Roots</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg position-fixed custom-nav">
+        <div class="container-fluid d-flex justify-content-between">
+          <a class="navbar-brand" href="#">
+            <span id="custom-header-fruits"> Fruits </span><span id="custom-header-and">&</span><span id="custom-header-roots"> Roots </span> 
+          </a>
+          
+            <ul class="navbar-nav d-flex flex-sm-row">
+              <li id="custom-nav-option" class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+              <li id="custom-nav-option" class="nav-item">
+                <a class="nav-link" href="#">Fruits</a>
+              </li>
+              <li id="custom-nav-option" class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+              </li>
+            </ul>
+          
+        </div>
+      </nav>
+
+      <div class="container-fluid position-relative d-flex justify-content-between custom-app-container">
+      <div id="sign-in-form" class="form col-5"> 
+          
+        <div class="input-group my-3">
+          <span class="input-group-text" id="form-label"> Email Address: </span>
+          <input id="user-email" type="text" class="form-control" placeholder="Enter your email" aria-label="example@email.com">
+        </div>
+
+        <div class="input-group my-3">
+          <span class="input-group-text" id="form-label"> Password </span>
+          <input id="user-password" type="password" class="form-control" placeholder="Enter your password" aria-label="password">
+        </div>
+
+        <button id="sign-in-btn"> Sign In </button>
+        <button id="sign-up-btn"> Sign Up </button>
+      </div>
+
+
+      <div id="sign-up-form" class="form col-5">
+        <div class="input-group">
+          <span class="input-group-text">First name </span>
+          <input id="register-first-name" type="text" aria-label="First name" class="form-control">
+          <span class="input-group-text">Last name </span>
+          <input id="register-last-name" type="text" aria-label="Last name" class="form-control">
+        </div>
+      
+        <div class="input-group my-3">
+          <span class="input-group-text" id="form-label"> Email Address: </span>
+          <input id="register-email" type="text" class="form-control" placeholder="Username" aria-label="example@email.com">
+        </div>
+
+        <div class="input-group my-3">
+          <span class="input-group-text" id="form-label"> Password </span>
+          <input id="register-password" type="password" class="form-control" placeholder="Password must be at least 6 characters long" aria-label="password">
+        </div>
+
+        <p> Confirm your password </p>
+        <div class="input-group my-3">
+          <span class="input-group-text" id="form-label"> Password </span>
+          <input id="register-password-confirm" type="password" class="form-control" placeholder="Password must be at least 6 characters long" aria-label="password-confirm">
+        </div>
+
+        <div class="input-group my-3">
+          <span class="input-group-text" id="form-label"> Location </span>
+          <input id="register-location" type="text" class="form-control" placeholder="Enter your location" aria-label="location">
+        </div>
+
+        <div class="input-group my-3">
+          <span class="input-group-text" id="form-label"> Favorite Fruit </span>
+          <input id="register-fav-fruit" type="text" class="form-control" placeholder="What is your favorite fruit" aria-label="favorite">
+        </div>
+
+        <button id="sign-in-btn"> Register Now </button>
+
+
+      </div>
+
+
+
+
+      </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../public/js/script.js"></script>
+  </body>
+</html>
