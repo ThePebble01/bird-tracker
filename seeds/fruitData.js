@@ -21,7 +21,7 @@ const seedFruit = async () => {
     });
   });
   console.log(fruitData[0]);
-  Fruit.bulkCreate(fruitData);
+  await Fruit.bulkCreate(fruitData);
 };
 //seedFruit();
 module.exports = seedFruit;
