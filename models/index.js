@@ -24,31 +24,11 @@ Profile.hasMany(Sighting, {
   foreignKey: "profile_id",
 });
 
-FavoriteFruit.belongsTo(Fruit, {
-  foreignKey: "fruit_id",
-});
-Fruit.hasMany(FavoriteFruit, {
-  foreignKey: "fruit_id",
-});
-FavoriteFruit.belongsTo(Profile, {
-  foreignKey: "profile_id",
-});
-Profile.hasMany(FavoriteFruit, {
-  foreignKey: "profile_id",
-});
+Fruit.belongsToMany(Profile, { through: FavoriteFruit });
+Profile.belongsToMany(Fruit, { through: FavoriteFruit });
 
-FavoriteLocation.belongsTo(Profile, {
-  foreignKey: "profile_id",
-});
-Profile.hasMany(FavoriteLocation, {
-  foreignKey: "profile_id",
-});
-FavoriteLocation.belongsTo(Location, {
-  foreignKey: "location_id",
-});
-Location.hasMany(FavoriteLocation, {
-  foreignKey: "location_id",
-});
+Location.belongsToMany(Profile, { through: FavoriteLocation });
+Profile.belongsToMany(Location, { through: FavoriteLocation });
 
 module.exports = {
   Profile,
