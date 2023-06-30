@@ -2,53 +2,35 @@ const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
 
-class User extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
-}
+class Location extends Model {}
 
-User.init(
+Location.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    username: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    email: {
+    city: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
     },
-    password: {
+    state: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [6],
-      },
     },
   },
   {
-    hooks: {
-      async beforeCreate(newUserData) {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
-      },
-    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: "location",
   }
 );
 
-module.exports = User;
+module.exports = Location;
