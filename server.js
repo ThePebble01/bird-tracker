@@ -3,18 +3,17 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+require("dotenv").config();
 
 const routes = require("./controllers");
 const sequelize = require("./config/connection");
-// Const helpers = require("./utils/helpers");
-// Pull helpers w/ withAuth functions
-// Confirm experience if a user is not logged in
+// const helpers = require("./utils/helpers");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sess = {
-  secret: "something", //env string
+  secret: process.env.SESSION_SECRET, //env string
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -25,7 +24,7 @@ const sess = {
 
 app.use(session(sess));
 
-const hbs = exphbs.create(); //{ helpers }
+const hbs = exphbs.create();
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
