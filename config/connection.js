@@ -8,7 +8,7 @@ const sequelize = new Sequelize(
   {
     //THIS CONTENT WILL CHANGE BASED ON JAWSDB DOCUMENTATION
     //https://elements.heroku.com/addons/jawsdb
-    host: "localhost",
+    host: "127.0.0.1",
     dialect: "mysql",
     port: 3306,
   }
