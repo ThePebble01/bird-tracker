@@ -1,11 +1,11 @@
-const loginBtn = $("#login-form");
-const signUpBtn = $("#signup-form");
+const signIn = $("#sign-in-btn");
+const register = $("#register-btn");
 
-const loginFormHandler = async (e) => {
+const signInFormHandler = async (e) => {
   e.preventDefault();
 
-  const email = $("#email-login").value.trim();
-  const password = $("#password-login").value.trim();
+  const email = $("#user-email").value.trim();
+  const password = $("#user-password").value.trim();
 
   if (email && password) {
     const response = await fetch("/api/users/login", {
@@ -26,12 +26,23 @@ const loginFormHandler = async (e) => {
 const signupFormHandler = async (e) => {
   e.preventDefault();
 
-  const firstName = $("#firstName-signup").value.trim();
-  const lastName = $("#lastName-signup").value.trim();
-  const favoriteFruit = $("#favoriteFruit-signup").value.trim();
-  const location = $("#location-signup").value.trim();
-  const email = $("#email-signup").value.trim();
-  const password = $("#password-signup").value.trim();
+  const firstName = $("#register-first-name").value.trim();
+  const lastName = $("#register-last-name").value.trim();
+  const favoriteFruit = $("#register-fav-fruit").value.trim();
+  const location = $("#register-location").value.trim();
+  const email = $("#register-email").value.trim();
+  let password = "";
+
+  // check if passwords match
+  if (
+    $("#register-password-confirm").value.trim() ==
+    $("#register-password").value.trim()
+  ) {
+    password = $("#register-password-confirm").value.trim();
+  } else {
+    // TODO: change to modal pop up
+    alert("Password does not match");
+  }
 
   if (firstName && lastName && favoriteFruit && location && email && password) {
     const response = await fetch("api/users", {
@@ -56,5 +67,5 @@ const signupFormHandler = async (e) => {
   }
 };
 
-loginBtn.on("submit", loginFormHandler);
-signUpBtn.on("submit", signupFormHandler);
+signIn.on("click", signInFormHandler);
+register.on("click", signupFormHandler);
