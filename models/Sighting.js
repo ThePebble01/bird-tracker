@@ -5,6 +5,11 @@ class Sighting extends Model {}
 
 Sighting.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     profile_id: {
       type: DataTypes.INTEGER,
       references: {

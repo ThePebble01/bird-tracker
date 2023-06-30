@@ -5,6 +5,12 @@ class FavoriteLocation extends Model {}
 
 FavoriteLocation.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     profile_id: {
       type: DataTypes.INTEGER,
       references: {

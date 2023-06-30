@@ -20,13 +20,21 @@ FavoriteFruit.init(
         key: "id",
       },
     },
+    profile_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "profile",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "favoritefruit",
+    modelName: "favoriteFruit",
   }
 );
 
