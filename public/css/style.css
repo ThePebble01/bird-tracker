@@ -18,6 +18,13 @@ h1{
     color: var(--red);
 }
 
+footer{
+    background-color: var(--dark) ;
+    color: var(--light);
+    font-family: var(--caprasimo);
+    text-align: center;
+}
+
 /* custom nav styles */
 .custom-nav{
     background-color: var(--dark);
