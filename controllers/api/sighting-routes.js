@@ -47,7 +47,7 @@ router.get("/from/:profileId", async (req, res) => {
       sighting.get({ plain: true })
     );
     res.json(sightings);
-    //res.render("sighting", { sighting });
+    //res.render("profile", { sighting });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
