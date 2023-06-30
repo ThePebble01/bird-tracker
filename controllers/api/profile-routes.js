@@ -1,19 +1,30 @@
 const router = require("express").Router();
 const { Profile } = require("../../models");
 
+router.get("/", async (req, res) => {
+  try {
+    const profileData = await Profile.findByPk(req.session.profile_id);
+    const profile = profileData.get({ plain: true });
+    res.json(profile);
+    //res.render("my-profile", { profile });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.post("/", async (req, res) => {
   try {
     const profileData = await Profile.create({
-      firstname: req.body.firstName,
-      lastname: req.body.lastname,
+      username: req.body.username,
       email: req.body.email,
       password: req.body.password,
     });
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
-      res.status(200);
+      req.session.profile_id = profileData.get({ plain: true }).id;
+      res.status(200).json({ profileData });
     });
   } catch (err) {
     console.log(err);
@@ -47,10 +58,10 @@ router.post("/login", async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
+      req.session.profile_id = profileData.get({ plain: true }).id;
       res
         .status(200)
-        .json({ user: dbUserData, message: "You are now logged in!" });
+        .json({ user: profileData, message: "You are now logged in!" });
     });
   } catch (err) {
     console.log(err);
