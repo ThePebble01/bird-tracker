@@ -8,8 +8,6 @@ const sequelize = process.env.JAWSDB_URL
       process.env.DB_USER,
       process.env.DB_PASSWORD,
       {
-        //THIS CONTENT WILL CHANGE BASED ON JAWSDB DOCUMENTATION
-        //https://elements.heroku.com/addons/jawsdb
         host: "localhost",
         dialect: "mysql",
         port: 3306,
