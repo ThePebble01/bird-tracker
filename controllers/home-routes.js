@@ -25,20 +25,19 @@ router.get("/", async (req, res) => {
     );
     var fruitOfTheDay;
     if (
-      !req.session.fruitOfTheDayOptions ||
-      (req.session.fruitOfTheDayOptions &&
-        req.session.fruitOfTheDayOptions.dateSelected + 60 * 60 * 1000 * 24 >
-          Date.now())
+      !req.session.dateSelected ||
+      (req.session.dateSelected &&
+        req.session.dateSelected + (60 * 60 * 1000 * 24) <= Date.now())
     ) {
       const fruitData = await Fruit.findAll({
         order: [Sequelize.fn("RAND")],
         limit: 1,
       });
       fruitOfTheDay = fruitData[0].get({ plain: true });
-      req.session.fruitOfTheDayOptions.fruit = fruitOfTheDay;
-      req.session.fruitOfTheDayOptions.dateSelected = Date.now();
+      req.session.fruit = fruitOfTheDay;
+      req.session.dateSelected = Date.now();
     } else {
-      fruitOfTheDay = req.session.fruitOfTheDayOptions.fruit;
+      fruitOfTheDay = req.session.fruit;
     }
 
     res.json({
