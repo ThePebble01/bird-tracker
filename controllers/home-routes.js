@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
     if (
       !req.session.fruitOfTheDayOptions ||
       (req.session.fruitOfTheDayOptions &&
-        req.session.fruitOfTheDayOptions.dateSelected + (60 * 60 * 1000 * 24) >
+        req.session.fruitOfTheDayOptions.dateSelected + 60 * 60 * 1000 * 24 >
           Date.now())
     ) {
       const fruitData = await Fruit.findAll({
@@ -42,7 +42,7 @@ router.get("/", async (req, res) => {
     }
 
     res.json({
-      fruitDatafruitOfTheDay,
+      fruitOfTheDay,
       sightings,
       loggedIn: req.session.loggedIn,
     }); //REMOVE AFTER TESTING
