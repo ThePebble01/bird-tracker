@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Sequelize = require("sequelize");
 const { Sighting, Fruit, Location } = require("../models");
 
-//Get the 10 most recent sightings and a random fruit to display on the homepage.
+//Get the 10 most recent sightings and a fruit of the day to display on the homepage.
 router.get("/", async (req, res) => {
   try {
     const sightingData = await Sighting.findAll({
@@ -39,7 +39,6 @@ router.get("/", async (req, res) => {
     } else {
       fruitOfTheDay = req.session.fruit;
     }
-
     res.json({
       fruitOfTheDay,
       sightings,

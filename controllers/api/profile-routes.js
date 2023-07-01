@@ -20,7 +20,6 @@ router.post("/", async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.profile_id = profileData.get({ plain: true }).id;
@@ -39,23 +38,19 @@ router.post("/login", async (req, res) => {
         email: req.body.email,
       },
     });
-
     if (!profileData) {
       res
         .status(400)
         .json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
-
     const validPassword = await profileData.checkPassword(req.body.password);
-
     if (!validPassword) {
       res
         .status(400)
         .json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
-
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.profile_id = profileData.get({ plain: true }).id;
@@ -71,9 +66,7 @@ router.post("/login", async (req, res) => {
 
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
+    req.session.loggedIn = false;
   } else {
     res.status(404).end();
   }

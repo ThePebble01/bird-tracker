@@ -15,8 +15,10 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sess = {
-  secret: "something", //env string
-  cookie: {},
+  secret: "something", //irl...replace env string
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24,
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -26,7 +28,7 @@ const sess = {
 
 app.use(session(sess));
 
-const hbs = exphbs.create(); //{ helpers }
+const hbs = exphbs.create(); //pass in { helpers } once defined.
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
