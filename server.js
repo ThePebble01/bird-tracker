@@ -7,9 +7,7 @@ require("dotenv").config();
 
 const routes = require("./controllers");
 const sequelize = require("./config/connection");
-// Const helpers = require("./utils/helpers");
-// Pull helpers w/ withAuth functions
-// Confirm experience if a user is not logged in
+// const helpers = require("./utils/helpers");
 
 const app = express();
 const PORT = process.env.PORT || 3001;

@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
     if (
       !req.session.dateSelected ||
       (req.session.dateSelected &&
-        req.session.dateSelected + (60 * 60 * 1000 * 24) <= Date.now())
+        req.session.dateSelected + 60 * 60 * 1000 * 24 <= Date.now())
     ) {
       const fruitData = await Fruit.findAll({
         order: [Sequelize.fn("RAND")],

@@ -8,7 +8,7 @@ const signInFormHandler = async (e) => {
   const password = $("#user-password").value.trim();
 
   if (email && password) {
-    const response = await fetch("/api/users/login", {
+    const response = await fetch("/api/profile/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
@@ -28,8 +28,6 @@ const signupFormHandler = async (e) => {
 
   const firstName = $("#register-first-name").value.trim();
   const lastName = $("#register-last-name").value.trim();
-  const favoriteFruit = $("#register-fav-fruit").value.trim();
-  const location = $("#register-location").value.trim();
   const email = $("#register-email").value.trim();
   let password = "";
 
@@ -44,14 +42,12 @@ const signupFormHandler = async (e) => {
     alert("Password does not match");
   }
 
-  if (firstName && lastName && favoriteFruit && location && email && password) {
-    const response = await fetch("api/users", {
+  if (firstName && lastName && email && password) {
+    const response = await fetch("api/profile", {
       method: "POST",
       body: JSON.stringify({
         firstName,
         lastName,
-        favoriteFruit,
-        location,
         email,
         password,
       }),
