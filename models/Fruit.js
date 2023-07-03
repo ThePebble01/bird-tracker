@@ -11,6 +11,10 @@ Fruit.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    fruit_of_the_day: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
