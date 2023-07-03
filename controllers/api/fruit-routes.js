@@ -6,11 +6,17 @@ router.get("/", async (req, res) => {
   try {
     const fruitData = await Fruit.findAll();
     const fruits = fruitData.map((fruit) => fruit.get({ plain: true }));
-    if(!fruits){
-      res.status(404).json({message: "No fruits have been seeded in the database."});
+    if (!fruits) {
+      res
+        .status(404)
+        .json({ message: "No fruits have been seeded in the database." });
+      return;
     }
-    res.status(200).json(fruits);
-    //res.render("sighting", { sightings });
+    const fruitNameIdArr = [];
+    fruits.forEach((fruit) => {
+      fruitNameIdArr.push({ label: fruit.name, value: fruit.id });
+    });
+    res.status(200).json(fruitNameIdArr);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
