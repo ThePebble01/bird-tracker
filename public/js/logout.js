@@ -13,4 +13,4 @@ const logout = async () => {
   }
 };
 
-logout.on("click", logout);
+logoutBtn.on("click", logout);
