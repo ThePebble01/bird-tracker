@@ -1,7 +1,5 @@
 const { Fruit } = require("../models");
-const Sequelize = require("../config/connection");
 const seedFruit = async () => {
-  await Sequelize.sync({ force: true });
   const fruityViceResponse = await fetch(
     "https://fruityvice.com/api/fruit/all"
   );
@@ -25,5 +23,4 @@ const seedFruit = async () => {
   }
   await Fruit.bulkCreate(fruitData);
 };
-seedFruit();
 module.exports = seedFruit;
