@@ -19,10 +19,17 @@ router.get("/", async (req, res) => {
         },
       ],
     });
-
-    const sightings = sightingData.map((sighting) =>
-      sighting.get({ plain: true })
-    );
+    const sightings = [];
+    sightingData.forEach((dbSighting) => {
+      const sighting = dbSighting.get({ plain: true });
+      sightings.push({
+        fruitName: sighting.fruit.name,
+        timestamp: sighting.createdAt,
+        locationName: sighting.location.name,
+        city: sighting.location.city,
+        state: sighting.location.state,
+      });
+    });
     const fruitOfTheDay = await Fruit.findAll({
       limit: 1,
       where: {
@@ -39,7 +46,7 @@ router.get("/", async (req, res) => {
       fruitOfTheDay: fruitOfTheDay[0].get({ plain: true }),
       loggedIn: req.session.loggedIn,
     });
-    //homepage to display message if there is no sightning data
+    //homepage to display message if there is no sighting data
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
