@@ -16,16 +16,16 @@ router.get("/:id", async (req, res) => {
         },
       ],
     });
-    const sightings = sightingData.get({ plain: true });
-    res.json(sightings);
-    //res.render("sighting", { sightings });
+    const sighting = sightingData.get({ plain: true });
+    res.json(sighting);
+    //res.render("sighting", { sighting });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
-//Get a user's sightings - view other user's sightings
+//Get a user's sightings for their profile or to view other user's sightings
 router.get("/from/:profileId", async (req, res) => {
   try {
     const sightingData = await Sighting.findAll({
@@ -47,7 +47,7 @@ router.get("/from/:profileId", async (req, res) => {
       sighting.get({ plain: true })
     );
     res.json(sightings);
-    //res.render("profile", { sighting });
+    //res.render("profile", { sightings });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -55,7 +55,7 @@ router.get("/from/:profileId", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.loggedIn) {// move to isAuth middleware function
     try {
       /*
             fruit picklist on frontend contains id?
@@ -82,7 +82,7 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.loggedIn) {// move to isAuth middleware function
     try {
       /*
               fruit picklist on frontend contains id?

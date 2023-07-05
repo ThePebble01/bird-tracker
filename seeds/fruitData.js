@@ -1,17 +1,18 @@
 const { Fruit } = require("../models");
-
 const seedFruit = async () => {
-  console.log("woot fruit");
   const fruityViceResponse = await fetch(
     "https://fruityvice.com/api/fruit/all"
   );
   const fruityViceData = await fruityViceResponse.json();
   const fruitData = [];
-  fruityViceData.forEach((extFruitData) => {
+  const randIndex = Math.floor(Math.random() * fruityViceData.length);
+  for (let i = 0; i < fruityViceData.length; i++) {
+    const extFruitData = fruityViceData[i];
     fruitData.push({
       name: extFruitData.name,
       family: extFruitData.family,
       order: extFruitData.order,
+      fruit_of_the_day: randIndex == i,
       genus: extFruitData.genus,
       calories: extFruitData.nutritions.calories,
       fat: extFruitData.nutritions.fat,
@@ -19,9 +20,7 @@ const seedFruit = async () => {
       carbohydrates: extFruitData.nutritions.carbohydrates,
       protein: extFruitData.nutritions.protein,
     });
-  });
-  console.log(fruitData[0]);
+  }
   await Fruit.bulkCreate(fruitData);
 };
-//seedFruit();
 module.exports = seedFruit;

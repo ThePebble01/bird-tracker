@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Sequelize = require("sequelize");
 const { Sighting, Fruit, Location } = require("../models");
 
-//Get the 10 most recent sightings and a random fruit to display on the homepage.
+//Get the 10 most recent sightings and a fruit of the day to display on the homepage.
 router.get("/", async (req, res) => {
   try {
     const sightingData = await Sighting.findAll({
@@ -23,15 +23,18 @@ router.get("/", async (req, res) => {
     const sightings = sightingData.map((sighting) =>
       sighting.get({ plain: true })
     );
-
-    const fruitData = await Fruit.findAll({
-      order: [Sequelize.fn("RAND")],
+    const fruitOfTheDay = await Fruit.findAll({
       limit: 1,
+      where: {
+        fruit_of_the_day: true,
+      },
     });
-    res.json({ fruitData, sightings, loggedIn: req.session.loggedIn }); //REMOVE AFTER TESTING
-    const randomFruit = fruitData[0].get({ plain: true });
-    res.render("homepage", { sightings, randomFruit });
-    //homepage to display message if there is no sightning data
+    res.json({
+      fruitOfTheDay,
+      sightings,
+      loggedIn: req.session.loggedIn,
+    }); //REMOVE AFTER TESTING
+    //res.render("homepage", { sightings, fruitOfTheDay[0].get("{plain: true}"), loggedIn: req.session.loggedIn }); //homepage to display message if there is no sightning data
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
