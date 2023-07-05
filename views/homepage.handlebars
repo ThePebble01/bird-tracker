@@ -2,6 +2,9 @@
   <div class="row d-flex justify-content-center">
     <div class="col-md-8 col-sm-11 p-2 m-2" id="main-section">
       <h1> FRUIT SIGHTING NEAR YOU </h1>
+      {{#if loggedIn}}
+        {{! add modal for adding sightings }}
+      {{/if}}
       <ul class="list-group list-group-flush custom-feed-box m-3">
         <li class="list-group-item p-3 custom-feed-item">
           <img
