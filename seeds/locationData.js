@@ -22,6 +22,16 @@ const seedLocation = async () => {
       city: "Denver",
       state: "Colorado",
     },
+    {
+      name: "Big Tree, NW Side of Ferril Lake In City Park",
+      city: "Denver",
+      state: "Colorado",
+    },
+    {
+      name: "That One Lake",
+      city: "Granby",
+      state: "Colorado",
+    },
   ];
   await Location.bulkCreate(locationData);
 };

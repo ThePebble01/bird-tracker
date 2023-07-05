@@ -12,6 +12,16 @@ const profileData = [
     email: "user2@aol.com",
     password: testUserPass,
   },
+  {
+    username: "user3",
+    email: "user3@aol.com",
+    password: testUserPass,
+  },
+  {
+    username: "user4",
+    email: "user4@aol.com",
+    password: testUserPass,
+  },
 ];
 
 const seedProfile = () => Profile.bulkCreate(profileData);
