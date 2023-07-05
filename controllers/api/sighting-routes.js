@@ -17,13 +17,8 @@ router.get("/:id", async (req, res) => {
       ],
     });
     const sighting = sightingData.get({ plain: true });
-    res.render("sighting-detail", {
-      fruitName: sighting.fruit.name,
-      timestamp: sighting.createdAt,
-      locationName: sighting.location.name,
-      city: sighting.location.city,
-      state: sighting.location.state,
-    });
+    res.json(sighting);
+    //res.render("sighting", { sighting });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -60,21 +55,21 @@ router.get("/from/:profileId", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  if (req.session.loggedIn) {
-    // move to isAuth middleware function
+  if (req.session.loggedIn) {// move to isAuth middleware function
     try {
-      // TODO: Conceive de-duplication logic, add de-duplication logic to Location model, move Location POST to its own api route.
-      const locationData = await Location.create({
-        name: req.body.locationName,
-        city: req.body.locationCity,
-        state: req.body.locationState,
-      });
+      /*
+            fruit picklist on frontend contains id?
+    
+            do we expose raw location fields and try to match by name, city, and state?
+            do we expose a picklist for existing locations and then have raw fields under?
+        */
       const sightingData = await Sighting.create({
-        fruit_id: req.body.fruitId,
+        fruit_id: fruitId,
         profile_id: req.session.profile_id,
-        location_id: locationData.id,
+        location_id: locationId,
       });
-      res.status(200).json({ sightingData });
+
+      res.status(200).json({ sightingData }); //CONFIRM RESPONSE
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
@@ -87,11 +82,11 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
-  if (req.session.loggedIn) {
-    // move to isAuth middleware function
+  if (req.session.loggedIn) {// move to isAuth middleware function
     try {
       /*
               fruit picklist on frontend contains id?
+      
               do we expose raw location fields and try to match by name, city, and state?
               do we expose a picklist for existing locations and then have raw fields under?
           */
