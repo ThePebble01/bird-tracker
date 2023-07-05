@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const Sequelize = require("sequelize");
-const { Sighting, Fruit, Location } = require("../models");
+const { Sighting, Fruit, Location, Profile } = require("../models");
 
 //Get the 10 most recent sightings and a fruit of the day to display on the homepage.
 router.get("/", async (req, res) => {
@@ -29,12 +29,17 @@ router.get("/", async (req, res) => {
         fruit_of_the_day: true,
       },
     });
-    res.json({
-      fruitOfTheDay,
+    // res.json({
+    //   fruitOfTheDay,
+    //   sightings,
+    //   loggedIn: req.session.loggedIn,
+    // }); //REMOVE AFTER TESTING
+    res.render("homepage", {
       sightings,
+      fruitOfTheDay: fruitOfTheDay[0].get({ plain: true }),
       loggedIn: req.session.loggedIn,
-    }); //REMOVE AFTER TESTING
-    //res.render("homepage", { sightings, fruitOfTheDay[0].get("{plain: true}"), loggedIn: req.session.loggedIn }); //homepage to display message if there is no sightning data
+    });
+    //homepage to display message if there is no sightning data
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -48,6 +53,18 @@ router.get("/login", (req, res) => {
   }
 
   res.render("login");
+});
+
+router.get("/profile", async (req, res) => {
+  try {
+    const profileData = await Profile.findByPk(req.session.profile_id);
+    const profile = profileData.get({ plain: true });
+
+    res.render("profile", { profile });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

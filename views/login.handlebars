@@ -25,24 +25,17 @@
     </div>
 
     <button id="sign-in-btn">Sign In</button>
-    <button id="sign-up-btn">Sign Up</button>
   </div>
 
   <div id="sign-up-form" class="form col-5">
     <div class="input-group">
-      <span class="input-group-text">First name </span>
+      <span class="input-group-text">Username </span>
       <input
-        id="register-first-name"
+        id="register-username"
         type="text"
-        aria-label="First name"
+        aria-label="Username"
         class="form-control"
-      />
-      <span class="input-group-text">Last name </span>
-      <input
-        id="register-last-name"
-        type="text"
-        aria-label="Last name"
-        class="form-control"
+        placeholder="Username"
       />
     </div>
 
@@ -52,7 +45,7 @@
         id="register-email"
         type="text"
         class="form-control"
-        placeholder="Username"
+        placeholder="example@email.com"
         aria-label="example@email.com"
       />
     </div>
@@ -68,7 +61,7 @@
       />
     </div>
 
-    <p>Confirm your password</p>
+    {{! <p>Confirm your password</p>
     <div class="input-group my-3">
       <span class="input-group-text" id="form-label"> Password </span>
       <input
@@ -78,7 +71,7 @@
         placeholder="Password must be at least 6 characters long"
         aria-label="password-confirm"
       />
-    </div>
+    </div> }}
 
     <div class="input-group my-3">
       <span class="input-group-text" id="form-label"> Location </span>
@@ -105,5 +98,9 @@
     <button id="register-btn">Register Now</button>
   </div>
 </div>
-
-<script src="../public/js/login.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.7.0.min.js"
+  integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+  crossorigin="anonymous"
+></script>
+<script src="/js/login.js"></script>
