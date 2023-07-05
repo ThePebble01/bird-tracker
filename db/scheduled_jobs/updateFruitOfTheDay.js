@@ -1,4 +1,4 @@
-const Fruit = require("../../models");
+const { Fruit } = require("../../models");
 const Sequelize = require("sequelize");
 const updateFruitOfTheDay = async () => {
   await Fruit.update(
@@ -13,7 +13,7 @@ const updateFruitOfTheDay = async () => {
     order: [Sequelize.fn("RAND")],
     limit: 1,
   });
-  newFruitOfTheDay[0].do_query = true;
-  await newThingToUse[0].save();
+  newFruitOfTheDay[0].fruit_of_the_day = true;
+  await newFruitOfTheDay[0].save();
 };
 updateFruitOfTheDay();

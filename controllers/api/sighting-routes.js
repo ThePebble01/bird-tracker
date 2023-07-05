@@ -55,7 +55,7 @@ router.get("/from/:profileId", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.loggedIn) {// move to isAuth middleware function
     try {
       /*
             fruit picklist on frontend contains id?
@@ -82,7 +82,7 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.loggedIn) {// move to isAuth middleware function
     try {
       /*
               fruit picklist on frontend contains id?
