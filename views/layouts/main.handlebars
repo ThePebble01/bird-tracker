@@ -31,12 +31,15 @@
           <li id="custom-nav-option" class="nav-item">
             <a class="nav-link" aria-current="page" href="/">Home</a>
           </li>
-          <li id="custom-nav-option" class="nav-item">
-            <a class="nav-link" href="/profile">Profile</a>
-          </li>
-          <li id="custom-nav-option" class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
+          {{#if loggedIn}}
+            <li id="custom-nav-option" class="nav-item">
+              <a class="nav-link" href="/profile">Profile</a>
+            </li>
+          {{else}}
+            <li id="custom-nav-option" class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+          {{/if}}
         </ul>
 
       </div>
