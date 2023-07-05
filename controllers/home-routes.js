@@ -29,11 +29,11 @@ router.get("/", async (req, res) => {
         fruit_of_the_day: true,
       },
     });
-    res.json({
-      fruitOfTheDay,
-      sightings,
-      loggedIn: req.session.loggedIn,
-    }); //REMOVE AFTER TESTING
+    // res.json({
+    //   fruitOfTheDay,
+    //   sightings,
+    //   loggedIn: req.session.loggedIn,
+    // }); //REMOVE AFTER TESTING
     res.render("homepage", {
       sightings,
       fruitOfTheDay: fruitOfTheDay[0].get({ plain: true }),
@@ -56,16 +56,15 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/profile", async (req, res) => {
-  // try {
-  //   const profileData = await Profile.findByPk(req.session.profile_id);
-  //   const profile = profileData.get({ plain: true });
+  try {
+    const profileData = await Profile.findByPk(req.session.profile_id);
+    const profile = profileData.get({ plain: true });
 
-  //   res.render("profile", { profile });
-  res.render("profile");
-  // } catch (err) {
-  //   console.log(err);
-  //   res.status(500).json(err);
-  // }
+    res.render("profile", { profile, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
