@@ -120,9 +120,12 @@
   <div class="col-md-3 col-sm-11 p-2 m-2" id="side-section">
     <div class="card custom-fruit-card">
       <div class="card-body custom-fruit-body">
-        <h5 class="card-title mb-3"> ORANGE </h5>
-        <h6 class="card-subtitle mb-2"> Calories per serving: </h6>
-        <h6 class="card-subtitle mb-2"> Some other nutritional fact: </h6>
+        <h5 class="card-title mb-3"> {{fruitOfTheDay.name}} </h5>
+        <h6 class="card-subtitle mb-2">
+          Calories per serving:{{fruitOfTheDay.calories}}</h6>
+        <h6 class="card-subtitle mb-2">
+          Sugar per serving:
+          {{fruitOfTheDay.sugar}}</h6>
         <p class="card-text">Some quick example text to build on the card title
           and make up the bulk of the card's content.</p>
         <a href="#" class="btn">RECENT SIGHTING</a>
