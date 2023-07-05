@@ -19,27 +19,34 @@ router.get("/", async (req, res) => {
         },
       ],
     });
-
-    const sightings = sightingData.map((sighting) =>
-      sighting.get({ plain: true })
-    );
+    const sightings = [];
+    sightingData.forEach((dbSighting) => {
+      const sighting = dbSighting.get({ plain: true });
+      sightings.push({
+        fruitName: sighting.fruit.name,
+        timestamp: sighting.createdAt,
+        locationName: sighting.location.name,
+        city: sighting.location.city,
+        state: sighting.location.state,
+      });
+    });
     const fruitOfTheDay = await Fruit.findAll({
       limit: 1,
       where: {
         fruit_of_the_day: true,
       },
     });
-    res.json({
-      fruitOfTheDay,
-      sightings,
-      loggedIn: req.session.loggedIn,
-    }); //REMOVE AFTER TESTING
+    // res.json({
+    //   fruitOfTheDay,
+    //   sightings,
+    //   loggedIn: req.session.loggedIn,
+    // }); //REMOVE AFTER TESTING
     res.render("homepage", {
       sightings,
       fruitOfTheDay: fruitOfTheDay[0].get({ plain: true }),
       loggedIn: req.session.loggedIn,
     });
-    //homepage to display message if there is no sightning data
+    //homepage to display message if there is no sighting data
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -56,16 +63,19 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/profile", async (req, res) => {
-  // try {
-  //   const profileData = await Profile.findByPk(req.session.profile_id);
-  //   const profile = profileData.get({ plain: true });
+  try {
+    const profileData = await Profile.findByPk(req.session.profile_id);
+    const profile = profileData.get({ plain: true });
 
-  //   res.render("profile", { profile });
-  res.render("profile");
-  // } catch (err) {
-  //   console.log(err);
-  //   res.status(500).json(err);
-  // }
+    res.render("profile", { profile, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get("/sighting", (req, res) => {
+  res.render("sighting");
 });
 
 module.exports = router;
