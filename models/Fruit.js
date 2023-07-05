@@ -11,17 +11,50 @@ Fruit.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    fruit_of_the_day: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    subtype: {
+    family: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    quality: {
-      type: DataTypes.INTEGER,
+    order: {
+      type: DataTypes.STRING,
       allowNull: false,
+    },
+    genus: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    calories: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      defaultValue: 0,
+    },
+    fat: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      defaultValue: 0,
+    },
+    sugar: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      defaultValue: 0,
+    },
+    carbohydrates: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      defaultValue: 0,
+    },
+    protein: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      defaultValue: 0,
     },
   },
   {
