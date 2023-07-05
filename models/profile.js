@@ -43,7 +43,7 @@ Profile.init(
           newProfileData.password,
           10
         );
-        return newUserData;
+        return newProfileData;
       },
     },
     sequelize,

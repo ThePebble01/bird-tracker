@@ -4,6 +4,9 @@
     class="rounded-circle border m-2"
     src="/images/placeholder-profilepic.jpeg"
   />
+  {{#if loggedIn}}
+    <button id="logout-btn">Logout</button>
+  {{/if}}
 </div>
 
 <div class="container-fluid position-relative custom-app-container">

@@ -4,8 +4,8 @@ const register = $("#register-btn");
 const signInFormHandler = async (e) => {
   e.preventDefault();
 
-  const email = $("#user-email").value;
-  const password = $("#user-password").value;
+  const email = $("#user-email").val();
+  const password = $("#user-password").val();
 
   if (email && password) {
     const response = await fetch("/api/profile/login", {
@@ -26,9 +26,9 @@ const signInFormHandler = async (e) => {
 const signupFormHandler = async (e) => {
   e.preventDefault();
 
-  const username = $("#register-username").value;
-  const email = $("#register-email").value;
-  const password = $("#register-password").value;
+  const username = $("#register-username").val();
+  const email = $("#register-email").val();
+  const password = $("#register-password").val();
 
   if (username && email && password) {
     const response = await fetch("api/profile", {

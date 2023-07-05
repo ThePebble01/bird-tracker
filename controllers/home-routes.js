@@ -60,7 +60,7 @@ router.get("/profile", async (req, res) => {
     const profileData = await Profile.findByPk(req.session.profile_id);
     const profile = profileData.get({ plain: true });
 
-    res.render("profile", { profile });
+    res.render("profile", { profile, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
