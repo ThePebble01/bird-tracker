@@ -63,19 +63,18 @@ router.post("/", async (req, res) => {
   if (req.session.loggedIn) {
     // move to isAuth middleware function
     try {
-      /*
-            fruit picklist on frontend contains id?
-    
-            do we expose raw location fields and try to match by name, city, and state?
-            do we expose a picklist for existing locations and then have raw fields under?
-        */
-      const sightingData = await Sighting.create({
-        fruit_id: fruitId,
-        profile_id: req.session.profile_id,
-        location_id: locationId,
+      // TODO: Conceive de-duplication logic, add de-duplication logic to Location model, move Location POST to its own api route.
+      const locationData = await Location.create({
+        name: req.body.locationName,
+        city: req.body.locationCity,
+        state: req.body.locationState,
       });
-
-      res.status(200).json({ sightingData }); //CONFIRM RESPONSE
+      const sightingData = await Sighting.create({
+        fruit_id: req.body.fruitId,
+        profile_id: req.session.profile_id,
+        location_id: locationData.id,
+      });
+      res.status(200).json({ sightingData });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
@@ -93,7 +92,6 @@ router.put("/:id", async (req, res) => {
     try {
       /*
               fruit picklist on frontend contains id?
-      
               do we expose raw location fields and try to match by name, city, and state?
               do we expose a picklist for existing locations and then have raw fields under?
           */

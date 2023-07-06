@@ -1,13 +1,15 @@
-<div
+<form
+  id="sighting-post-form"
   class="container-fluid position-relative col-9 d-flex flex-column justify-content-between custom-app-container"
 >
 
   <h3> Enter your fruit sighting! </h3>
-  <select class="form-select my-3" aria-label=".sighting-select">
+  <select
+    id="fruit-selection"
+    class="form-select my-3"
+    aria-label=".sighting-select"
+  >
     <option selected>Select a fruit</option>
-    <option value="1"> Persimmon </option>
-    <option value="2"> Banana </option>
-    <option value="3"> Apple </option>
   </select>
 
   <div class="input-group my-3">
@@ -33,7 +35,7 @@
   </div>
 
   <div class="input-group my-3">
-    <span class="input-group-text" id="form-label"> Location </span>
+    <span class="input-group-text" id="form-label"> Location Name </span>
     <input
       id="sighting-location"
       type="text"
