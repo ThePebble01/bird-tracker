@@ -17,6 +17,10 @@ router.get("/", async (req, res) => {
           model: Location,
           attributes: ["name", "city", "state"],
         },
+        {
+          model: Profile,
+          attributes: ["username"],
+        },
       ],
     });
     const sightings = [];
@@ -28,6 +32,7 @@ router.get("/", async (req, res) => {
         locationName: sighting.location.name,
         city: sighting.location.city,
         state: sighting.location.state,
+        username: sighting.profile.username,
       });
     });
     const fruitOfTheDay = await Fruit.findAll({
@@ -36,11 +41,6 @@ router.get("/", async (req, res) => {
         fruit_of_the_day: true,
       },
     });
-    // res.json({
-    //   fruitOfTheDay,
-    //   sightings,
-    //   loggedIn: req.session.loggedIn,
-    // }); //REMOVE AFTER TESTING
     res.render("homepage", {
       sightings,
       fruitOfTheDay: fruitOfTheDay[0].get({ plain: true }),
