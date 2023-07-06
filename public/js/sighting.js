@@ -31,7 +31,9 @@ const handleSightingSubmit = async (e) => {
       headers: { "Content-Type": "application/json" },
     });
     const sightingPostData = await response.json();
-    alert("A sighting has been successfully added!");
+    if (response.ok) {
+      document.location.replace("/");
+    }
     /*
       ?Navigate to the newly added sighting once a page has been fleshed out? 
       document.location.replace(
