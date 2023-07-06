@@ -1,23 +1,23 @@
 <div class="container-fluid position-relative custom-app-container">
   <div class="row d-flex justify-content-center">
     <div class="col-11 p-2 m-2" id="main-section">
-    <div class="d-flex">   
-      <img
-      id="profile-picture"
-      class="rounded-circle border m-3"
-      src="/images/placeholder-profilepic.jpeg"
+      <div class="d-flex">
+        <img
+          id="profile-picture"
+          class="rounded-circle border m-3"
+          src="/images/placeholder-profilepic.jpeg"
         />
         <h1 class="m-3"> {{profile.username}}</h1>
         {{#if loggedIn}}
-        <button id="logout-btn" class="rounded m-3">Logout</button>
-      {{/if}}
-        </div>
+          <button id="logout-btn" class="rounded m-3">Logout</button>
+        {{/if}}
+      </div>
       <div id="feed-container" class="col-lg-8 col-sm-12 p-2 m-2">
-      <h1 id="profile-feed-header"> MY FRUIT </h1>
+        <h1 id="profile-feed-header"> MY FRUIT </h1>
 
-      <ul class="list-group list-group-flush custom-feed-box m-3">
+        <ul class="list-group list-group-flush custom-feed-box m-3">
 
-      </ul>
+        </ul>
       </div>
     </div>
   </div>
