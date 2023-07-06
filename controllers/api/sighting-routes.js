@@ -17,8 +17,13 @@ router.get("/:id", async (req, res) => {
       ],
     });
     const sighting = sightingData.get({ plain: true });
-    res.json(sighting);
-    //res.render("sighting", { sighting });
+    res.render("sighting-details", {
+      fruitName: sighting.fruit.name,
+      timestamp: sighting.createdAt,
+      locationName: sighting.location.name,
+      city: sighting.location.city,
+      state: sighting.location.state,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -55,7 +60,8 @@ router.get("/from/:profileId", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  if (req.session.loggedIn) {// move to isAuth middleware function
+  if (req.session.loggedIn) {
+    // move to isAuth middleware function
     try {
       /*
             fruit picklist on frontend contains id?
@@ -82,7 +88,8 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
-  if (req.session.loggedIn) {// move to isAuth middleware function
+  if (req.session.loggedIn) {
+    // move to isAuth middleware function
     try {
       /*
               fruit picklist on frontend contains id?

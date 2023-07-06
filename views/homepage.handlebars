@@ -1,8 +1,13 @@
-<div class="container-fluid position-relative custom-app-container">
-  <div class="row d-flex justify-content-center">
-    <div class="col-md-8 col-sm-11 p-2 m-2" id="main-section">
-      <h1> FRUIT SIGHTING NEAR YOU </h1>
-      <ul class="list-group list-group-flush custom-feed-box m-3">
+<div class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column custom-app-container">
+  <div class="row col-md-12 d-flex justify-content-center" id="main-section">
+    <div id="feed-container" class="col-lg-8 col-sm-12 p-2 m-2">
+      <h1 id="feed-header"> FRUIT FEED </h1>
+      {{#if loggedIn}}
+       <a href="/sighting"><button>Add a New Sighting!</button></a>
+      {{/if}}
+
+
+        {{#each sightings as |sighting|}}
         <li class="list-group-item p-3 custom-feed-item">
           <img
             id="profile-picture"
@@ -113,22 +118,19 @@
           <p> City, State, Country </p>
           <h6> hh:mm </h6>
         </li>
-      </ul>
     </div>
 
-  </div>
-  <div class="col-md-3 col-sm-11 p-2 m-2" id="side-section">
-    <div class="card custom-fruit-card">
-      <div class="card-body custom-fruit-body">
-        <h5 class="card-title mb-3"> {{fruitOfTheDay.name}} </h5>
-        <h6 class="card-subtitle mb-2">
-          Calories per serving:{{fruitOfTheDay.calories}}</h6>
-        <h6 class="card-subtitle mb-2">
-          Sugar per serving:
-          {{fruitOfTheDay.sugar}}</h6>
-        <p class="card-text">Some quick example text to build on the card title
-          and make up the bulk of the card's content.</p>
-        <a href="#" class="btn">RECENT SIGHTING</a>
+  
+    <div class="col-lg-3 col-md-11 p-2 m-2" id="side-section">
+      <div class="card custom-fruit-card">
+        <div class="card-body custom-fruit-body">
+          <h5 class="card-title mb-3"> {{fruitOfTheDay.name}} </h5>
+          <h6 class="card-subtitle mb-2">
+          Calories per serving: {{fruitOfTheDay.calories}}</h6>
+          <h6 class="card-subtitle mb-2">
+          Sugar per serving: {{fruitOfTheDay.sugar}}</h6>
+          <a href="#" class="btn">RECENT SIGHTING</a>
+        </div>
       </div>
     </div>
   </div>
