@@ -66,7 +66,43 @@ router.get("/profile", async (req, res) => {
   try {
     const profileData = await Profile.findByPk(req.session.profile_id);
     const profile = profileData.get({ plain: true });
-    res.render("profile", { profile, loggedIn: req.session.loggedIn });
+    const sightingData = await Sighting.findAll({
+      where: {
+        profile_id: req.session.profile_id,
+      },
+      include: [
+        {
+          model: Fruit,
+          attributes: ["name"],
+        },
+        {
+          model: Location,
+          attributes: ["name", "city", "state"],
+        },
+        {
+          model: Profile,
+          attributes: ["username"],
+        },
+      ],
+    });
+    const sightings = [];
+    sightingData.forEach((dbSighting) => {
+      const sighting = dbSighting.get({ plain: true });
+      sightings.push({
+        fruitName: sighting.fruit.name,
+        timestamp: sighting.createdAt,
+        locationName: sighting.location.name,
+        city: sighting.location.city,
+        state: sighting.location.state,
+        username: sighting.profile.username,
+      });
+    });
+
+    res.render("profile", {
+      profile,
+      loggedIn: req.session.loggedIn,
+      sightings,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
