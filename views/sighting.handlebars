@@ -1,0 +1,54 @@
+<form
+  id="sighting-post-form"
+  class="container-fluid position-relative col-9 d-flex flex-column justify-content-between custom-app-container"
+>
+
+  <h3> Enter your fruit sighting! </h3>
+  <select
+    id="fruit-selection"
+    class="form-select my-3"
+    aria-label=".sighting-select"
+  >
+    <option selected>Select a fruit</option>
+  </select>
+
+  <div class="input-group my-3">
+    <span class="input-group-text" id="form-label"> City </span>
+    <input
+      id="sighting-city"
+      type="text"
+      class="form-control"
+      placeholder="Enter your city"
+      aria-label="sighting-city"
+    />
+  </div>
+
+  <div class="input-group my-3">
+    <span class="input-group-text" id="form-label"> State </span>
+    <input
+      id="sighting-state"
+      type="text"
+      class="form-control"
+      placeholder="Enter your state"
+      aria-label="sighting-state"
+    />
+  </div>
+
+  <div class="input-group my-3">
+    <span class="input-group-text" id="form-label"> Location Name </span>
+    <input
+      id="sighting-location"
+      type="text"
+      class="form-control"
+      placeholder="Enter the location (ex. Safeway)"
+      aria-label="sighting-location"
+    />
+  </div>
+  <button type="submit" class="rounded submit-btn">Submit</button>
+</form>
+<script
+  src="https://code.jquery.com/jquery-3.7.0.min.js"
+  integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+  crossorigin="anonymous"
+></script>
+<script src="/js/sighting.js"></script>
