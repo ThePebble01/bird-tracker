@@ -46,7 +46,7 @@ router.get("/", async (req, res) => {
       fruitOfTheDay: fruitOfTheDay[0].get({ plain: true }),
       loggedIn: req.session.loggedIn,
     });
-    //homepage to display message if there is no sighting data
+    //homepage to display message if there is no sightning data
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -66,7 +66,6 @@ router.get("/profile", async (req, res) => {
   try {
     const profileData = await Profile.findByPk(req.session.profile_id);
     const profile = profileData.get({ plain: true });
-
     res.render("profile", { profile, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
