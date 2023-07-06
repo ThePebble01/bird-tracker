@@ -1,13 +1,14 @@
 <div
-  class="container-fluid position-relative d-flex justify-content-between custom-app-container"
+  class="container-fluid position-relative d-flex justify-content-around custom-app-container"
 >
-  <div id="sign-in-form" class="form col-5">
+  <div id="sign-in-form" class="form col-4">
+    <h1> Login </h1>
     <div class="input-group my-3">
       <span class="input-group-text" id="form-label"> Email Address: </span>
       <input
         id="user-email"
         type="text"
-        class="form-control"
+        class="form-control custom-input"
         placeholder="Enter your email"
         aria-label="example@email.com"
       />
@@ -18,23 +19,24 @@
       <input
         id="user-password"
         type="password"
-        class="form-control"
+        class="form-control custom-input"
         placeholder="Enter your password"
         aria-label="password"
       />
     </div>
 
-    <button id="sign-in-btn">Sign In</button>
+    <button id="sign-in-btn" class="rounded"> Login </button>
   </div>
 
-  <div id="sign-up-form" class="form col-5">
+  <div id="sign-up-form" class="form col-4">
+    <h1> Sign Up </h1>
     <div class="input-group">
-      <span class="input-group-text">Username </span>
+      <span class="input-group-text" id="form-label"> Username </span>
       <input
         id="register-username"
         type="text"
         aria-label="Username"
-        class="form-control"
+        class="form-control custom-input"
         placeholder="Username"
       />
     </div>
@@ -44,7 +46,7 @@
       <input
         id="register-email"
         type="text"
-        class="form-control"
+        class="form-control custom-input"
         placeholder="example@email.com"
         aria-label="example@email.com"
       />
@@ -55,7 +57,7 @@
       <input
         id="register-password"
         type="password"
-        class="form-control"
+        class="form-control custom-input"
         placeholder="Password must be at least 6 characters long"
         aria-label="password"
       />
@@ -67,7 +69,7 @@
       <input
         id="register-password-confirm"
         type="password"
-        class="form-control"
+        class="form-control custom-input"
         placeholder="Password must be at least 6 characters long"
         aria-label="password-confirm"
       />
@@ -78,7 +80,7 @@
       <input
         id="register-location"
         type="text"
-        class="form-control"
+        class="form-control custom-input"
         placeholder="Enter your location"
         aria-label="location"
       />
@@ -89,13 +91,13 @@
       <input
         id="register-fav-fruit"
         type="text"
-        class="form-control"
+        class="form-control custom-input"
         placeholder="What is your favorite fruit"
         aria-label="favorite"
       />
     </div>
 
-    <button id="register-btn">Register Now</button>
+    <button id="register-btn" class="rounded"> Register Now </button>
   </div>
 </div>
 <script

@@ -74,4 +74,8 @@ router.get("/profile", async (req, res) => {
   }
 });
 
+router.get("/sighting", (req, res) => {
+  res.render("sighting");
+});
+
 module.exports = router;

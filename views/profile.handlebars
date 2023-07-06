@@ -1,62 +1,24 @@
 <div class="container-fluid position-relative custom-app-container">
-  <img
-    id="profile-picture"
-    class="rounded-circle border m-2"
-    src="/images/placeholder-profilepic.jpeg"
-  />
-  {{#if loggedIn}}
-    <button id="logout-btn">Logout</button>
-  {{/if}}
-</div>
-
-<div class="container-fluid position-relative custom-app-container">
   <div class="row d-flex justify-content-center">
-    <div class="col-md-8 col-sm-11 p-2 m-2" id="main-section">
-      <h1> {{profile.username}}'s Favorite Fruits</h1>
+    <div class="col-11 p-2 m-2" id="main-section">
+    <div class="d-flex">   
+      <img
+      id="profile-picture"
+      class="rounded-circle border m-3"
+      src="/images/placeholder-profilepic.jpeg"
+        />
+        <h1 class="m-3"> {{profile.username}}</h1>
+        {{#if loggedIn}}
+        <button id="logout-btn" class="rounded m-3">Logout</button>
+      {{/if}}
+        </div>
+      <div id="feed-container" class="col-lg-8 col-sm-12 p-2 m-2">
+      <h1 id="profile-feed-header"> MY FRUIT </h1>
+
       <ul class="list-group list-group-flush custom-feed-box m-3">
-        <li class="list-group-item p-3 custom-feed-item">
-          <h3> Raspberry </h3>
-          <p> Family, Order, Genus </p>
-        </li>
-        <li class="list-group-item p-3 custom-feed-item">
 
-          <h3> Apple </h3>
-          <p> Family, Order, Genus </p>
-        </li>
-        <li class="list-group-item p-3 custom-feed-item">
-
-          <h3> Orange </h3>
-          <p> Family, Order, Genus </p>
-        </li>
-        <li class="list-group-item p-3 custom-feed-item">
-          <h3> Grape Fruit </h3>
-          <p> Family, Order, Genus </p>
-        </li>
-        <li class="list-group-item p-3 custom-feed-item">
-          <h3> Pinapple </h3>
-          <p> Family, Order, Genus </p>
-        </li>
-        <li class="list-group-item p-3 custom-feed-item">
-          <h3> Kiwi </h3>
-          <p> Family, Order, Genus </p>
-        </li>
-        <li class="list-group-item p-3 custom-feed-item">
-          <h3> Pallisade Peaches </h3>
-          <p> Family, Order, Genus </p>
-        </li>
-        <li class="list-group-item p-3 custom-feed-item">
-          <h3> Blueberries</h3>
-          <p> Family, Order, Genus </p>
-        </li>
-        <li class="list-group-item p-3 custom-feed-item">
-          <h3> Star Fruit </h3>
-          <p> Family, Order, Genus </p>
-        </li>
-        <li class="list-group-item p-3 custom-feed-item">
-          <h3> Watermelon </h3>
-          <p> Family, Order, Genus </p>
-        </li>
       </ul>
+<<<<<<< HEAD
 
         </div>
         <div class="col-md-3 col-sm-11 p-2 m-2" id="side-section">
@@ -74,6 +36,8 @@
             </div>
           </div>
         </div>
+=======
+>>>>>>> f9a85ceecb7aaba65470b31cc17e293a820199ff
       </div>
     </div>
 
