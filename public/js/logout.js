@@ -1,6 +1,7 @@
 const logoutBtn = $("#logout-button");
-console.log("woot");
+
 const logout = async () => {
+  // POST request to end the session
   const response = await fetch("/api/profile/logout", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -13,4 +14,5 @@ const logout = async () => {
   }
 };
 
+// Event listener
 logoutBtn.on("click", logout);
