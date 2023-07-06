@@ -1,16 +1,118 @@
-<div class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column custom-app-container">
-  <div class="row col-md-12 d-flex justify-content-center" id="main-section">
-    <div id="feed-container" class="col-lg-8 col-sm-12 p-2 m-2">
-      <h1 id="feed-header"> FRUIT FEED </h1>
-      {{#if loggedIn}}
-       <a href="/sighting"><button>Add a New Sighting!</button></a>
-      {{/if}}
-
-
+<div class="container-fluid position-relative custom-app-container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-8 col-sm-11 p-2 m-2" id="main-section">
+      <h1> FRUIT SIGHTING NEAR YOU </h1>
       <ul class="list-group list-group-flush custom-feed-box m-3">
-        {{#each sightings as |sighting|}}
-        {{>feed-details}}
-        {{/each}}
+        <li class="list-group-item p-3 custom-feed-item">
+          <img
+            id="profile-picture"
+            class="rounded-circle border m-2"
+            src="/images/placeholder-profilepic.jpeg"
+          />
+          <h3> Raspberry </h3>
+          <p> Denver, Colorado, USA </p>
+          <h6> 11:59 am </h6>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
+          <img
+            id="profile-picture"
+            class="rounded-circle border m-2"
+            src="/images/placeholder-profilepic.jpeg"
+          />
+          <h3> Apple </h3>
+          <p> Seattle, Washington, USA </p>
+          <h6> 11:50 am </h6>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
+          <img
+            id="profile-picture"
+            class="rounded-circle border m-2"
+            src="/images/placeholder-profilepic.jpeg"
+          />
+          <h3> Orange </h3>
+          <p> Valencia, Valencia, Spain </p>
+          <h6> 11:47 am </h6>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
+          <img
+            id="profile-picture"
+            class="rounded-circle border m-2"
+            src="/images/placeholder-profilepic.jpeg"
+          />
+          <h3> Grape Fruit </h3>
+          <p> Palm Springs, California, USA </p>
+          <h6> 11:43 am </h6>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
+          <img
+            id="profile-picture"
+            class="rounded-circle border m-2"
+            src="/images/placeholder-profilepic.jpeg"
+          />
+          <h3> Fruit </h3>
+          <p> City, State, Country </p>
+          <h6> hh:mm </h6>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
+          <img
+            id="profile-picture"
+            class="rounded-circle border m-2"
+            src="/images/placeholder-profilepic.jpeg"
+          />
+          <h3> Fruit </h3>
+          <p> City, State, Country </p>
+          <h6> hh:mm </h6>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
+          <img
+            id="profile-picture"
+            class="rounded-circle border m-2"
+            src="/images/placeholder-profilepic.jpeg"
+          />
+          <h3> Fruit </h3>
+          <p> City, State, Country </p>
+          <h6> hh:mm </h6>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
+          <img
+            id="profile-picture"
+            class="rounded-circle border m-2"
+            src="/images/placeholder-profilepic.jpeg"
+          />
+          <h3> Fruit </h3>
+          <p> City, State, Country </p>
+          <h6> hh:mm </h6>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
+          <img
+            id="profile-picture"
+            class="rounded-circle border m-2"
+            src="/images/placeholder-profilepic.jpeg"
+          />
+          <h3> Fruit </h3>
+          <p> City, State, Country </p>
+          <h6> hh:mm </h6>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
+          <img
+            id="profile-picture"
+            class="rounded-circle border m-2"
+            src="/images/placeholder-profilepic.jpeg"
+          />
+          <h3> Fruit </h3>
+          <p> City, State, Country </p>
+          <h6> hh:mm </h6>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
+          <img
+            id="profile-picture"
+            class="rounded-circle border m-2"
+            src="/images/placeholder-profilepic.jpeg"
+          />
+          <h3> Fruit </h3>
+          <p> City, State, Country </p>
+          <h6> hh:mm </h6>
+        </li>
       </ul>
     </div>
   

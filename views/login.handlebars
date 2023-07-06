@@ -25,18 +25,19 @@
       />
     </div>
 
-    <button id="sign-in-btn" class="rounded"> Login </button>
+    <button id="sign-in-btn">Sign In</button>
+    <button id="sign-up-btn">Sign Up</button>
   </div>
 
   <div id="sign-up-form" class="form col-4">
     <h1> Sign Up </h1>
     <div class="input-group">
-      <span class="input-group-text" id="form-label"> Username </span>
+      <span class="input-group-text">Username </span>
       <input
-        id="register-username"
+        id="register-last-name"
         type="text"
         aria-label="Username"
-        class="form-control custom-input"
+        class="form-control"
         placeholder="Username"
       />
     </div>
@@ -46,7 +47,7 @@
       <input
         id="register-email"
         type="text"
-        class="form-control custom-input"
+        class="form-control"
         placeholder="example@email.com"
         aria-label="example@email.com"
       />
@@ -63,7 +64,7 @@
       />
     </div>
 
-    {{! <p>Confirm your password</p>
+    <p>Confirm your password</p>
     <div class="input-group my-3">
       <span class="input-group-text" id="form-label"> Password </span>
       <input
@@ -73,7 +74,7 @@
         placeholder="Password must be at least 6 characters long"
         aria-label="password-confirm"
       />
-    </div> }}
+    </div>
 
     <div class="input-group my-3">
       <span class="input-group-text" id="form-label"> Location </span>
@@ -100,9 +101,5 @@
     <button id="register-btn" class="rounded"> Register Now </button>
   </div>
 </div>
-<script
-  src="https://code.jquery.com/jquery-3.7.0.min.js"
-  integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
-  crossorigin="anonymous"
-></script>
-<script src="/js/login.js"></script>
+
+<script src="../public/js/login.js"></script>

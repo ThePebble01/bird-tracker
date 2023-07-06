@@ -29,15 +29,16 @@
           <li id="custom-nav-option" class="nav-item mx-2">
             <a class="nav-link" aria-current="page" href="/">Home</a>
           </li>
-          {{#if loggedIn}}
-            <li id="custom-nav-option" class="nav-item mx-2">
-              <a class="nav-link" href="/profile">Profile</a>
-            </li>
-          {{else}}
-            <li id="custom-nav-option" class="nav-item mx-2">
-              <a class="nav-link" href="/login">Login</a>
-            </li>
-          {{/if}}
+          <li id="custom-nav-option" class="nav-item">
+            <a class="nav-link" href="/profile">Profile</a>
+          </li>
+          <li id="custom-nav-option" class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li id="custom-nav-option" class="nav-item"><a
+              class="nav-link"
+              href="#"
+            >Logout</a></li>
         </ul>
 
       </div>
@@ -45,7 +46,7 @@
     <main>
       {{{body}}}
     </main>
-    <footer class="fixed-bottom" id="">The Best Fruit Tracking App</footer>
+    <footer class="fixed-bottom" id="">Fruit Tracker</footer>
   </body>
 </html>
 <script
@@ -58,3 +59,4 @@
   integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
   crossorigin="anonymous"
 ></script>
+<script src="/js/logout.js"></script>

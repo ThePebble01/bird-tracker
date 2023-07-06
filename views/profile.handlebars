@@ -1,44 +1,63 @@
+
+<div class="container-fluid position-relative custom-app-container" >
+  <img id="profile-picture" class="rounded-circle border m-2" src="../public/images/placeholder-profilepic.jpeg"/>
+</div>
+
 <div class="container-fluid position-relative custom-app-container">
   <div class="row d-flex justify-content-center">
-    <div class="col-11 p-2 m-2" id="main-section">
-    <div class="d-flex">   
-      <img
-      id="profile-picture"
-      class="rounded-circle border m-3"
-      src="/images/placeholder-profilepic.jpeg"
-        />
-        <h1 class="m-3"> {{profile.username}}</h1>
-        {{#if loggedIn}}
-        <button id="logout-btn" class="rounded m-3">Logout</button>
-      {{/if}}
-        </div>
-      <div id="feed-container" class="col-lg-8 col-sm-12 p-2 m-2">
-      <h1 id="profile-feed-header"> MY FRUIT </h1>
-
+    <div class="col-md-8 col-sm-11 p-2 m-2" id="main-section">
+      <h1> {{profile.username}}'s Favorite Fruits</h1>
       <ul class="list-group list-group-flush custom-feed-box m-3">
+        <li class="list-group-item p-3 custom-feed-item">
+          <h3> Raspberry </h3>
+          <p> Family, Order, Genus </p>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
 
+          <h3> Apple </h3>
+          <p> Family, Order, Genus </p>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
+
+          <h3> Orange </h3>
+          <p> Family, Order, Genus </p>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
+          <h3> Grape Fruit </h3>
+          <p> Family, Order, Genus </p>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
+          <h3> Pinapple </h3>
+          <p> Family, Order, Genus </p>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
+          <h3> Kiwi </h3>
+          <p> Family, Order, Genus </p>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
+          <h3> Pallisade Peaches </h3>
+          <p> Family, Order, Genus </p>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
+          <h3> Blueberries</h3>
+          <p> Family, Order, Genus </p>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
+          <h3> Star Fruit </h3>
+          <p> Family, Order, Genus </p>
+        </li>
+        <li class="list-group-item p-3 custom-feed-item">
+          <h3> Watermelon </h3>
+          <p> Family, Order, Genus </p>
+        </li>
       </ul>
-<<<<<<< HEAD
 
-        </div>
-        <div class="col-md-3 col-sm-11 p-2 m-2" id="side-section">
-          <div class="card custom-fruit-card">
-            <div class="card-body custom-fruit-body">
-              <h5 class="card-title mb-3"> Recent Sightings </h5>
-<<<<<<< HEAD
-              <h6 class="card-subtitle mb-2"> Fruit  </h6>
-=======
-              <h6 class="card-subtitle mb-2"> Fruit </h6>
->>>>>>> 31ccc0de20de83a5fc6fcef898e1241793c299ee
-              <h6 class="card-subtitle mb-2"> City, State, Country </h6>
-              <p class="card-text">Note entered by user about the sighting?</p>
-              <a href="#" class="btn">NEW RECENT SIGHTING</a>
-            </div>
-          </div>
-        </div>
-=======
->>>>>>> f9a85ceecb7aaba65470b31cc17e293a820199ff
-      </div>
     </div>
-
-      <footer class=" fixed-bottom" id="">Fruit Tracker</footer>
+  </div>
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.7.0.min.js"
+  integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+  crossorigin="anonymous"
+></script>
+<script src="/js/logout.js"></script>

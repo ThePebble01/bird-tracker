@@ -4,14 +4,14 @@ const register = $("#register-btn");
 const signInFormHandler = async (e) => {
   e.preventDefault();
 
-  const email = $("#user-email").val();
-  const password = $("#user-password").val();
+  const email = $("#user-email").value.trim();
+  const password = $("#user-password").value.trim();
 
   if (email && password) {
     const response = await fetch("/api/profile/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
-      headers: { "Content-Type": "application/json" },
+      // headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
@@ -26,23 +26,36 @@ const signInFormHandler = async (e) => {
 const signupFormHandler = async (e) => {
   e.preventDefault();
 
-  const username = $("#register-username").val();
-  const email = $("#register-email").val();
-  const password = $("#register-password").val();
+  const firstName = $("#register-first-name").value.trim();
+  const lastName = $("#register-last-name").value.trim();
+  const email = $("#register-email").value.trim();
+  let password = "";
 
-  if (username && email && password) {
+  // check if passwords match
+  if (
+    $("#register-password-confirm").value.trim() ==
+    $("#register-password").value.trim()
+  ) {
+    password = $("#register-password-confirm").value.trim();
+  } else {
+    // TODO: change to modal pop up
+    alert("Password does not match");
+  }
+
+  if (firstName && lastName && email && password) {
     const response = await fetch("api/profile", {
       method: "POST",
       body: JSON.stringify({
-        username,
+        firstName,
+        lastName,
         email,
         password,
       }),
-      headers: { "Content-Type": "application/json" },
+      // headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      document.location.replace("/login");
+      document.location.replace("/");
     } else {
       // TODO: Change from an alert to an appended message
       alert("Failed to sign up");
