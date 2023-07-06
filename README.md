@@ -3,7 +3,7 @@
   
   ## Description
   
-  A full stack application, hosted on Heroku, that utilizes a remote SQL database to allow users from all over to keep track of where the freshest, most delicious fruit can be found. It utilizes the sequelize library, express, handlebars, MVC, and multuple other technologies to bring this fruit sharing site to life.
+  A full stack application, hosted on Heroku, that utilizes a remote SQL database to allow users from all over to keep track of where the freshest, most delicious fruit can be found. It utilizes the sequelize library, express, handlebars, the MVC paradigm, and multuple other technologies to bring this fruit sharing site to life.
   
   ## Table of Contents
   
@@ -19,9 +19,9 @@
   
   ## Usage
   
-  Navigate to *enter URL here*, create an account, and every time you find a store, farmer's market, or tree that has fruite ripe for the picking, add a new sighting for your fellow fruitarians!
+  Navigate to [Fruit Finder](https://fruit-finder-f298ed9223ea.herokuapp.com/), create an account, and every time you find a store, farmer's market, or tree that has fruite ripe for the picking, add a new sighting for your fellow fruitarians!
 
-  ![image](https://github.com/ThePebble01/fruit-tracker/assets/132233010/c4ac0d5b-a1c2-4587-8be2-8a4091001076)
+  ![image](https://github.com/ThePebble01/fruit-tracker/assets/132233010/1a8a6455-cc4f-4f19-b1c2-3f1f31fde634)
 
   
   ## Contributions
