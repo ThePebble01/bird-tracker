@@ -4,8 +4,11 @@ const register = $("#register-btn");
 const signInFormHandler = async (e) => {
   e.preventDefault();
 
+  // Variable decalarations
   const email = $("#user-email").val();
   const password = $("#user-password").val();
+
+  // If the form has been filled out, send a post request to log the user in
 
   if (email && password) {
     const response = await fetch("/api/profile/login", {
@@ -17,7 +20,6 @@ const signInFormHandler = async (e) => {
     if (response.ok) {
       document.location.replace("/");
     } else {
-      // TODO: Change from an alert to an appended message
       alert("Failed to log in.");
     }
   }
@@ -26,10 +28,12 @@ const signInFormHandler = async (e) => {
 const signupFormHandler = async (e) => {
   e.preventDefault();
 
+  // Variable declarations
   const username = $("#register-username").val();
   const email = $("#register-email").val();
   const password = $("#register-password").val();
 
+  // If the form has been filled out, send a POST request to create a new user and log them in
   if (username && email && password) {
     const response = await fetch("api/profile", {
       method: "POST",
@@ -44,11 +48,11 @@ const signupFormHandler = async (e) => {
     if (response.ok) {
       document.location.replace("/login");
     } else {
-      // TODO: Change from an alert to an appended message
       alert("Failed to sign up");
     }
   }
 };
 
+// Event listeners
 signIn.on("click", signInFormHandler);
 register.on("click", signupFormHandler);
