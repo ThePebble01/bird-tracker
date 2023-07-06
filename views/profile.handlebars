@@ -12,9 +12,14 @@
       </div>
       <div id="feed-container" class="col-lg-8 col-sm-12 p-2 m-2">
         <h1 id="profile-feed-header"> MY FRUIT </h1>
-
+        {{! Users fruit sightings listed here }}
         <ul class="list-group list-group-flush custom-feed-box m-3">
-
+          {{#each}}
+            <li class="list-group-item p-2 custom-feed-item">
+              <h3 id="feed-fruit"> {{fruitName}} </h3>
+              <p id="feed-location"> {{locationName}} in {{city}}, {{state}}</p>
+            </li>
+          {{/each}}
         </ul>
       </div>
     </div>

@@ -1,5 +1,6 @@
 const fruitSelection = $("#fruit-selection");
 
+// This function dynamically populates the picklist with all the fruit from the database
 const init = async () => {
   try {
     const response = await fetch("api/fruit", {
@@ -17,6 +18,7 @@ const init = async () => {
   }
 };
 
+// POST request to add a new sighting to the database
 const handleSightingSubmit = async (e) => {
   e.preventDefault();
   try {
