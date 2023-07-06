@@ -26,12 +26,14 @@ const handleSightingSubmit = async (e) => {
         fruitId: fruitSelection.val(),
         locationName: $("#sighting-location").val(),
         locationCity: $("#sighting-city").val(),
-        locationState: $("#sighting-city").val(),
+        locationState: $("#sighting-state").val(),
       }),
       headers: { "Content-Type": "application/json" },
     });
     const sightingPostData = await response.json();
-    alert("A sighting has been successfully added!");
+    if (response.ok) {
+      document.location.replace("/");
+    }
   } catch (err) {
     console.log(err);
   }
