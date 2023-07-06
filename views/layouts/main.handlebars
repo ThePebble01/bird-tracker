@@ -15,28 +15,26 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/style.css" />
-
-    <title>Fruits & Roots</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/mango-favicon.svg">
+    <title> FruitFinder </title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg position-fixed custom-nav">
       <div class="container-fluid d-flex justify-content-between">
         <a class="navbar-brand" href="/">
-          <span id="custom-header-fruits"> Fruits </span><span
-            id="custom-header-and"
-          >&</span><span id="custom-header-roots"> Roots </span>
+          <span id="custom-header-fruits"> Fruit</span><span id="custom-header-roots">Finder </span>
         </a>
 
         <ul class="navbar-nav d-flex flex-sm-row">
-          <li id="custom-nav-option" class="nav-item">
+          <li id="custom-nav-option" class="nav-item mx-2">
             <a class="nav-link" aria-current="page" href="/">Home</a>
           </li>
           {{#if loggedIn}}
-            <li id="custom-nav-option" class="nav-item">
+            <li id="custom-nav-option" class="nav-item mx-2">
               <a class="nav-link" href="/profile">Profile</a>
             </li>
           {{else}}
-            <li id="custom-nav-option" class="nav-item">
+            <li id="custom-nav-option" class="nav-item mx-2">
               <a class="nav-link" href="/login">Login</a>
             </li>
           {{/if}}
@@ -47,7 +45,7 @@
     <main>
       {{{body}}}
     </main>
-    <footer class="fixed-bottom" id="">Fruit Tracker</footer>
+    <footer class="fixed-bottom" id="">The Best Fruit Tracking App</footer>
   </body>
 </html>
 <script
