@@ -17,7 +17,7 @@ router.get("/:id", async (req, res) => {
       ],
     });
     const sighting = sightingData.get({ plain: true });
-    res.render("sighting-detail", {
+    res.render("sighting-details", {
       fruitName: sighting.fruit.name,
       timestamp: sighting.createdAt,
       locationName: sighting.location.name,
