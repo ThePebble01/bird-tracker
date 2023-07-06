@@ -34,11 +34,6 @@ const handleSightingSubmit = async (e) => {
     if (response.ok) {
       document.location.replace("/");
     }
-    /*
-      ?Navigate to the newly added sighting once a page has been fleshed out? 
-      document.location.replace(
-     `/api/sighting/${sightingPostData.sightingData.id}`
-    );*/
   } catch (err) {
     console.log(err);
   }

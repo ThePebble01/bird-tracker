@@ -1,5 +1,5 @@
-const logoutBtn = $("#logout-btn");
-
+const logoutBtn = $("#logout-button");
+console.log("woot");
 const logout = async () => {
   const response = await fetch("/api/profile/logout", {
     method: "POST",
