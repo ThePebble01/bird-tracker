@@ -26,7 +26,7 @@ const handleSightingSubmit = async (e) => {
         fruitId: fruitSelection.val(),
         locationName: $("#sighting-location").val(),
         locationCity: $("#sighting-city").val(),
-        locationState: $("#sighting-city").val(),
+        locationState: $("#sighting-state").val(),
       }),
       headers: { "Content-Type": "application/json" },
     });
