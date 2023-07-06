@@ -144,6 +144,20 @@ button:hover{
     transform: scale(1.1)
 }
 
+.add-sighting-btn{
+    z-index: 2;
+}
+
+.add-sighting-btn:hober{
+    background-color: var(--red);
+}
+
+.submit-btn{
+    width: auto;
+    max-width: 200px;
+}
+    
+
 #logout-btn{
     background-color: var(--yellow);
     border: none;
