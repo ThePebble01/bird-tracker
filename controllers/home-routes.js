@@ -46,7 +46,6 @@ router.get("/", async (req, res) => {
       fruitOfTheDay: fruitOfTheDay[0].get({ plain: true }),
       loggedIn: req.session.loggedIn,
     });
-    //homepage to display message if there is no sighting data
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -58,7 +57,6 @@ router.get("/login", (req, res) => {
     res.redirect("/");
     return;
   }
-
   res.render("login");
 });
 
@@ -66,7 +64,6 @@ router.get("/profile", async (req, res) => {
   try {
     const profileData = await Profile.findByPk(req.session.profile_id);
     const profile = profileData.get({ plain: true });
-
     res.render("profile", { profile, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
@@ -76,6 +73,35 @@ router.get("/profile", async (req, res) => {
 
 router.get("/sighting", (req, res) => {
   res.render("sighting");
+});
+
+//Get an individual sighting
+router.get("/sighting/:id", async (req, res) => {
+  try {
+    const sightingData = await Sighting.findByPk(req.params.id, {
+      include: [
+        {
+          model: Fruit,
+          attributes: ["name"],
+        },
+        {
+          model: Location,
+          attributes: ["name", "city", "state"],
+        },
+      ],
+    });
+    const sighting = sightingData.get({ plain: true });
+    res.render("sighting-details", {
+      fruitName: sighting.fruit.name,
+      timestamp: sighting.createdAt,
+      locationName: sighting.location.name,
+      city: sighting.location.city,
+      state: sighting.location.state,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

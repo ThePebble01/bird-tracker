@@ -1,18 +1,6 @@
 const router = require("express").Router();
 const { Profile } = require("../../models");
 
-router.get("/", async (req, res) => {
-  try {
-    const profileData = await Profile.findByPk(req.session.profile_id);
-    const profile = profileData.get({ plain: true });
-    res.json(profile);
-    //res.render("my-profile", { profile });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
 router.post("/", async (req, res) => {
   try {
     const profileData = await Profile.create({
