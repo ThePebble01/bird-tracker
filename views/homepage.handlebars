@@ -1,10 +1,10 @@
 <div class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column custom-app-container">
   <div class="row col-md-12 d-flex justify-content-center" id="main-section">
     <div id="feed-container" class="col-lg-8 col-sm-12 p-2 m-2">
-      <div>
-      <h1 id="feed-header"> FRUIT FEED </h1>
+      <div id="feed-header" class="d-flex">
+      <h1 class="mx-5"> FRUIT FEED </h1>
       {{#if loggedIn}}
-       <a href="/sighting"><button class="rounded add-sighting-btn">Add a New Sighting!</button></a>
+       <a href="/sighting"><button class="rounded mx-5 add-sighting-btn">Add a New Sighting!</button></a>
       {{/if}}
       </div>
 
