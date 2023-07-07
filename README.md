@@ -21,7 +21,7 @@
   
   Navigate to [Fruit Finder](https://fruit-finder-f298ed9223ea.herokuapp.com/), create an account, and every time you find a store, farmer's market, or tree that has fruite ripe for the picking, add a new sighting for your fellow fruitarians!
 
-  ![image](https://github.com/ThePebble01/fruit-tracker/assets/132233010/1a8a6455-cc4f-4f19-b1c2-3f1f31fde634)
+ ![image](https://github.com/ThePebble01/fruit-finder/assets/132233010/165ac8cf-08e8-48d1-99a5-21b817a52f1f)
 
   
   ## Contributions
