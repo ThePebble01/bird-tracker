@@ -4,6 +4,7 @@
   ## Description
   
   A full stack application, hosted on Heroku, that utilizes a remote SQL database to allow users from all over to keep track of where the freshest, most delicious fruit can be found. It utilizes the sequelize library, express, handlebars, the MVC paradigm, and multuple other technologies to bring this fruit sharing site to life.
+  **https://prezi.com/p/edit/dtsk6qsxfjzk/**
   
   ## Table of Contents
   
