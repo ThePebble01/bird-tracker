@@ -1,7 +1,7 @@
 <div class="container-fluid position-relative custom-app-container">
   <div class="row d-flex justify-content-center">
     <div class="col-11 p-2 m-2" id="main-section">
-      <div class="d-flex">
+      <div id="profile-head" class="d-flex">
         <img
           id="profile-picture"
           class="rounded-circle border m-3"
@@ -12,22 +12,26 @@
           <button id="logout-button" class="rounded m-3">Logout</button>
         {{/if}}
       </div>
-      <div id="feed-container" class="col-lg-8 col-sm-12 p-2 m-2">
-        <h1 id="profile-feed-header"> MY FRUIT </h1>
+      <div id="feed-container" class="col-10 p-2 m-2">
+        <h2 id="profile-feed-header"> MY FRUIT BASKET </h2>
 
         <ul
           id="user-feed"
           class="list-group list-group-flush custom-feed-box m-3"
         >
           {{#each sightings as |sighting|}}
-            <li class="list-group-item p-2 custom-feed-item">
-              <h3 id="feed-fruit"> {{sighting.fruitName}} </h3>
-              <p id="feed-location">
+          
+        <li class="list-group-item p-2 custom-feed-item">
+        <div
+        id="prop"
+        class="rounded-circle border m-2 invisible"></div>
+          <h3 id="feed-fruit"> {{sighting.fruitName}} </h3>
+          <p id="feed-location">
                 {{sighting.locationName}}
                 in
                 {{sighting.city}},
                 {{sighting.state}}</p>
-            </li>
+        </li>
           {{/each}}
         </ul>
       </div>
