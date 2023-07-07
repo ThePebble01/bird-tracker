@@ -21,11 +21,19 @@
       <div class="card custom-fruit-card">
         <div class="card-body custom-fruit-body">
           <h5 class="card-title mb-3"> {{fruitOfTheDay.name}} </h5>
-          <h6 class="card-subtitle mb-2">
-          Calories per serving: {{fruitOfTheDay.calories}}</h6>
-          <h6 class="card-subtitle mb-2">
-          Sugar per serving: {{fruitOfTheDay.sugar}}</h6>
-          <a href="#" class="btn">RECENT SIGHTING</a>
+          <h6 class="card-subtitle my-2">
+          Nutrition Facts </h6>
+          <p class="card-subtitle my-2" id="small-label"> Amount Per Serving </p>
+          <p class="card-subtitle my-2"><span class="fw-bolder"> 
+          Calories </span> {{fruitOfTheDay.calories}}</p>
+          <p class="card-subtitle my-2"><span class="fw-bolder">
+          Carbohydrates  </span> {{fruitOfTheDay.carbohydrates}}g </p>
+          <p class="card-subtitle my-2"><span class="fw-bolder">
+          Protein  </span> {{fruitOfTheDay.protein}}g </p>
+          <p class="card-subtitle my-2"><span class="fw-bolder">
+          Fat  </span> {{fruitOfTheDay.fat}}g </p>
+          <p class="card-subtitle my-2"><span class="fw-bolder">
+          Sugar  </span> {{fruitOfTheDay.sugar}}g </p>
         </div>
       </div>
     </div>

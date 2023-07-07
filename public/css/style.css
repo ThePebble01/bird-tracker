@@ -17,6 +17,12 @@ h1 {
   color: var(--red);
 }
 
+h2{
+  font-family: var(--poppins);
+  color: var(--orange);
+  font-weight: 600;
+}
+
 footer {
   background-color: var(--dark);
   color: var(--light);
@@ -29,7 +35,7 @@ footer {
   background-color: var(--dark);
   font-family: var(--caprasimo);
   width: 100vw;
-  z-index: 2;
+  z-index: 3;
 }
 
 #custom-header-fruits {
@@ -58,7 +64,7 @@ a.nav-link:hover {
 /* custom body & feed style */
 .custom-app-container {
   min-width: 100vw;
-  padding-top: 135px;
+  padding-top: 110px;
 }
 
 .custom-feed-item {
@@ -72,7 +78,7 @@ a.nav-link:hover {
 }
 
 #feed-header {
-  position: fixed;
+  position: sticky;
   top: 100px;
   width: 100%;
   padding: 10px;
@@ -81,18 +87,26 @@ a.nav-link:hover {
   z-index: 1;
 }
 
+#feed-user{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 15%;
+}
+
 #feed-fruit {
   font-size: 150%;
   color: var(--dark);
   position: absolute;
-  left: 12%;
+  left: 15%;
+  max-width: 30%;
 }
 
 #feed-location {
   color: var(--light);
   position: absolute;
-  left: 38%;
-  max-width: 50%;
+  left: 45%;
+  max-width: 55%;
 }
 
 #feed-time {
@@ -103,29 +117,35 @@ a.nav-link:hover {
 /* custom sidebar card styles */
 .custom-fruit-card {
   background-color: white;
+  position: sticky;
+  top: 140px;
   z-index: 2;
 }
 
 .custom-fruit-card h5 {
-  font-size: 150%;
+  font-size: 225%;
   font-family: var(--caprasimo);
   color: var(--orange);
 }
 
 .custom-fruit-card h6 {
-  font-family: var(--poppins);
-  color: var(--dark);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 200%;
+  font-weight: 600;
+  color: black;
+  border-bottom: 10px solid black;
 }
 
-.custom-fruit-card a {
-  background-color: var(--light);
-  color: var(--dark);
-  font-family: var(--poppins);
+.custom-fruit-card p{
+  font-family: Arial, Helvetica, sans-serif;
+  border-bottom: 1px solid black;
 }
 
-.custom-fruit-card a:hover {
-  background-color: var(--orange);
+#small-label{
+  font-size: smaller;
+  border: none;
 }
+
 
 #form-label {
   color: white;
@@ -157,6 +177,20 @@ button:hover {
   max-width: 200px;
 }
 
+#profile-head{
+  background-color: var(--yellow);
+  position: sticky;
+  top: 120px;
+  z-index: 1;
+}
+
+#profile-feed-header{
+  background-color: var(--yellow);
+  position: sticky;
+  top: 200px;
+  z-index: 1;
+}
+
 #logout-button {
   background-color: var(--yellow);
   border: none;
@@ -164,19 +198,23 @@ button:hover {
 }
 
 #logout-button:hover {
-  border: 1px solid var(--dark);
+  background-color: var(--red);
 }
 
 .custom-input:focus {
+  background-color: #73f93a87;
   border: 1px solid var(--dark);
   box-shadow: 0 0 0 0;
-  background-color: #76af419e;
 }
 
 img#profile-picture {
   width: 50px;
   height: 50px;
   object-fit: cover;
+}
+
+div#prop {
+  height: 50px;
 }
 
 @media screen and (max-width: 576px) {
